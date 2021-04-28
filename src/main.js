@@ -5,6 +5,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 // 架子啊 element 组件库的样式
 import 'element-ui/lib/theme-chalk/index.css'
+import './styles/index.less'
 Vue.config.productionTip = false
 // 全局注册 element 组件库
 Vue.use(ElementUI)
