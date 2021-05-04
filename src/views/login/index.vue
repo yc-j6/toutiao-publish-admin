@@ -69,7 +69,6 @@ export default {
     login () {
       this.loginLoading = true
       login(this.user).then(res => {
-        console.log(res)
         this.$message({
           showClose: true,
           message: '登录成功',
@@ -84,8 +83,7 @@ export default {
         })
       }).catch(err => {
         console.log('登录失败', err)
-        this.$message.error('登录失败，手机号或验证码错误'
-        )
+        this.$message.error('登录失败，手机号或验证码错误')
         this.loginLoading = false
       })
     }

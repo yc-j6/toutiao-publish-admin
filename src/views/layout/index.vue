@@ -19,8 +19,8 @@
             <i class="el-icon-arrow-down el-icon--right"></i>
           </div>
   <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>设置</el-dropdown-item>
-    <el-dropdown-item @click.native="onLogout">退出</el-dropdown-item>
+    <el-dropdown-item>个人设置</el-dropdown-item>
+    <el-dropdown-item @click.native="onLogout">退出登录</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
       </el-header>
@@ -34,6 +34,7 @@
 <script>
 import AppAside from './components/aside'
 import { getUserProfile } from '@/api/user'
+import globalBus from '@/utlis/global-bus'
 export default {
   name: 'LayoutIndex',
   components: {
@@ -47,6 +48,10 @@ export default {
   },
   created () {
     this.loadUserProfile()
+    globalBus.$on('update-user', (data) => {
+      this.user.name = data.name
+      this.user.photo = data.photo
+    })
   },
   methods: {
     loadUserProfile () {
