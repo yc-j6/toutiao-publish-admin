@@ -36,8 +36,4 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 访问秘钥
         PUBLISH_BRANCH: gh-pages # 推送分支
-<<<<<<< HEAD
         PUBLISH_DIR: ./dist # 部署目录
-=======
-        PUBLISH_DIR: ./dist # 部署目录
->>>>>>> 7f3199e8ae094e31b754389a0c3a89199898d59b
