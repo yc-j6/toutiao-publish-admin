@@ -19,7 +19,7 @@
             <i class="el-icon-arrow-down el-icon--right"></i>
           </div>
   <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>个人设置</el-dropdown-item>
+    <el-dropdown-item @click.native="setting">个人设置</el-dropdown-item>
     <el-dropdown-item @click.native="onLogout">退出登录</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
@@ -58,6 +58,9 @@ export default {
       getUserProfile().then(res => {
         this.user = res.data.data
       })
+    },
+    setting () {
+      this.$router.push('/settings')
     },
     onLogout () {
       this.$confirm('确认退出吗？', '退出提示', {
