@@ -5,8 +5,8 @@
         text-color="#fff"
         active-text-color="#ffd04b"
         router
-        :collapse="isCollapse">
-        <img src="http://www.fciet.com/image/index/%E6%89%93%E9%80%A0%E5%89%8D%E7%A8%8B%E7%BA%BF%E7%A8%BF%E6%A0%87%E5%BF%97%E6%8B%B7%E8%B4%9D6.png" alt="" v-if="!isCollapse">
+        :collapse="isCollapse"
+        class="el-menus">
         <el-menu-item index="/">
           <i class="el-icon-s-home"></i>
           <span slot="title">首页</span>
@@ -50,4 +50,7 @@ export default {
 </script>
 
 <style  scoped lang='less'>
+.el-menus{
+  width: 150px;
+}
 </style>
